@@ -1,0 +1,125 @@
+.footer {
+  background: linear-gradient(135deg, #0f346c, #000);
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.footerCol {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #f26c29;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footerCol h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #f26c29;
+}
+
+.footerCol ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerCol ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footerCol ul li a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.footerCol ul li a:hover {
+  color: #f26c29;
+}
+
+/* Newsletter */
+.newsletter {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+}
+
+.newsletter button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 2rem;
+  background: #f26c29;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter button:hover {
+  background: #e56a00;
+}
+
+/* Socials */
+.socials a {
+  margin-right: 0.8rem;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #f26c29;
+}
+
+/* Copy Section */
+.copy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #222;
+  padding-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footerContainer {
+    text-align: center;
+  }
+
+  .newsletter {
+    flex-direction: column;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+  }
+}

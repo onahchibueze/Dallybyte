@@ -1,0 +1,145 @@
+.container {
+  background-image: url("../images/hero_image.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 600px;
+
+  align-items: center;
+}
+
+.heroHeader {
+  margin-top: 3.3rem;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.heroHeading {
+  margin-bottom: 4rem;
+}
+
+.mainHeading {
+  display: flex;
+  font-family: "Chronicle Deck", Times, serif;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.mainHeading > p {
+  margin-right: 1rem;
+  color: rgb(94, 103, 126);
+}
+
+.subHeading {
+  font-style: italic;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 40px;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: #f26c29;
+  border: none;
+  color: white;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0f346c;
+}
+
+/* ========= RESPONSIVE BREAKPOINTS ========= */
+
+/* Large screens - up to 1440px */
+@media (max-width: 1440px) {
+  .mainHeading {
+    font-size: 36px;
+  }
+  .subHeading {
+    font-size: 30px;
+  }
+}
+
+/* Medium desktops - up to 1024px */
+@media (max-width: 1024px) {
+  .mainHeading {
+    font-size: 32px;
+  }
+  .subHeading {
+    font-size: 28px;
+  }
+}
+
+/* Tablets - up to 768px */
+@media (max-width: 768px) {
+  .heroHeading {
+    margin-bottom: 1rem;
+  }
+  .container {
+    justify-content: center;
+    height: 450px;
+    text-align: center;
+  }
+  .mainHeading {
+    font-size: 28px;
+    flex-direction: column;
+  }
+  .subHeading {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .btn {
+    width: 180px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small phones - up to 480px */
+@media (max-width: 480px) {
+  .container {
+    height: 400px;
+    padding: 1rem;
+  }
+  .heroHeader {
+    padding: 1rem;
+  }
+  .mainHeading {
+    font-size: 22px;
+  }
+  .subHeading {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .btn {
+    width: 150px;
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Very small phones - up to 360px */
+@media (max-width: 360px) {
+  .mainHeading {
+    font-size: 20px;
+  }
+  .subHeading {
+    font-size: 16px;
+  }
+  .btn {
+    width: 140px;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,21 @@
+/* reset.css */
+
+/* Remove all default margin, padding, and make box-sizing easier to manage */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default link styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Set a clean base for the page */
+body {
+  font-family: sans-serif;
+  background: white;
+  line-height: 1.5;
+}

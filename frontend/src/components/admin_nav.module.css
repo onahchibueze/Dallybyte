@@ -1,0 +1,135 @@
+/* === TOP NAVIGATION === */
+.topNavContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  margin: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.topNavContainer:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* === MAIN CONTAINER === */
+.container {
+  border-radius: 1.5rem;
+  margin: 1rem;
+  background: linear-gradient(135deg, #f26c29, #ff884a);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+}
+
+.topContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.inputContainer input {
+  color: #0f346c;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  outline: none;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* === PROFILE === */
+.profile {
+  gap: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.profileName {
+  margin-left: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* === HEADINGS === */
+.heading {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: "Polysans", sans-serif;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* === HEADER === */
+.header {
+  padding-bottom: 1.5rem;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* === NAVIGATION === */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  padding: 0;
+  font-family: "Cera Pro", HelveticaNeue, sans-serif;
+}
+
+.listItem {
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.listItem:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+.a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.toggle {
+  width: 32px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.toggle:hover {
+  transform: rotate(90deg);
+}

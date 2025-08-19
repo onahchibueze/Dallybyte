@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.testimonialHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content horizontally */
+  text-align: center;
+}
+
+.testimonialHeading {
+  width: 500px;
+  max-width: 100%; /* prevent overflow on small screens */
+  font-family: agrandir-tight-bold, Verdana, Geneva, sans-serif;
+  font-weight: 500;
+  color: #0f346c;
+}
+
+.testimonialsub,
+.textSub {
+  font-family: roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(124, 178, 233);
+}
+
+.mainContent {
+  margin-top: 2rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.imgContainer {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.mainContainer {
+  margin: 2rem;
+}
+
+.imgContainer > img {
+  width: 100%;
+  height: auto; /* maintain aspect ratio */
+  display: block;
+  object-fit: cover; /* nice cropping effect */
+}
+
+.textHeading {
+  font-family: agrandir-tight-bold, Verdana, Geneva, sans-serif;
+  font-weight: 500;
+  font-size: 32px; /* fixed invalid 'size' */
+  color: #0f346c;
+}
+.offers {
+  margin: 2rem;
+}
+
+.btn {
+  background-color: #f26c29;
+  border: none;
+  color: white;
+  width: 400px;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 2rem;
+  transition: background-color 0.3s ease;
+  justify-items: center;
+}
+.bContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.btn:hover {
+  background-color: #0f346c;
+}
+/* ===================== */
+/* MEDIA QUERIES */
+/* ===================== */
+
+/* Large tablets & small desktops */
+@media (max-width: 1024px) {
+  .reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .mainContent {
+    grid-template-columns: 1fr; /* stack content vertically */
+    gap: 2rem;
+  }
+
+  .testimonialHeading {
+    font-size: 28px;
+  }
+}
+
+/* Tablets & large phones */
+@media (max-width: 768px) {
+  .testimonialHeading {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .testimonialsub,
+  .textSub {
+    font-size: 14px;
+  }
+
+  .textHeading {
+    font-size: 24px;
+  }
+}
+
+/* Small phones (like 400px width) */
+@media (max-width: 400px) {
+  .testimonialHeading {
+    font-size: 20px;
+  }
+
+  .textHeading {
+    font-size: 20px;
+  }
+
+  .mainContainer {
+    margin: 1rem;
+  }
+}

@@ -1,0 +1,167 @@
+/* === GENERAL STYLES === */
+.container {
+  position: fixed;
+  background-color: white;
+  z-index: 1000;
+  width: 100%;
+  padding: 1rem;
+}
+
+.header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  font-family: Polysans, sans-serif;
+  color: #0f346c;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* === NAV LIST === */
+.list {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Cera Pro", HelveticaNeue, "Helvetica Neue", HelveticaNeueRoman,
+    HelveticaNeue-Roman, "Helvetica Neue Roman", TeXGyreHerosRegular, Helvetica,
+    Tahoma, Geneva, Arial, sans-serif;
+  margin: 1rem 0;
+  gap: 1rem;
+  padding: 0;
+}
+
+.listItem {
+  color: rgb(124 178 233);
+  transition: color 0.3s ease;
+  margin: 0 2rem;
+}
+
+.listItem:hover {
+  color: #0f346c;
+}
+
+.a {
+  text-decoration: none;
+  color: inherit;
+}
+.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+}
+
+/* === BUTTONS === */
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.btn,
+.btnLogin {
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn {
+  background-color: #f26c29;
+  border: none;
+  color: white;
+}
+
+.btnLogin {
+  background-color: white;
+  color: #0f346c;
+  border: 2px solid #f26c29;
+}
+
+/* === TOGGLE BUTTON (MOBILE ONLY) === */
+.toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0f346c;
+  z-index: 1001;
+}
+
+/* === MOBILE MENU === */
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.open {
+  right: 0;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+  .menu {
+    display: flex;
+  }
+  .toggle {
+    width: 50px;
+    display: block;
+  }
+
+  /* Hide regular desktop nav + buttons */
+  #navbar-default,
+  .btnContainer {
+    display: none;
+  }
+  .hide {
+    display: none;
+  }
+
+  /* Override for menu's button container inside sidebar */
+  .menu .btnContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .menu .btn,
+  .menu .btnLogin {
+    width: 100%;
+  }
+
+  .menu .list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .header {
+    font-size: 1.5em;
+  }
+  .listItem {
+    border-bottom: 1px solid#0f346c;
+    padding: 0.5rem;
+    width: 150px;
+  }
+}

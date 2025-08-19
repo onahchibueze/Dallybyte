@@ -1,0 +1,258 @@
+.container {
+  padding: 15% 1rem;
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryHeader {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: bold;
+  color: #0f346c;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* Overlay behind modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.productDetailsContainer {
+  position: fixed; /* fixed ensures it stays centered on screen */
+  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+
+  background: rgba(0, 0, 0, 0.4); /* optional dim background */
+}
+
+.productDetails {
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  max-width: 800px;
+  width: 90%; /* make it responsive on small screens */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease;
+}
+
+.flex {
+  display: flex;
+  gap: 2rem;
+
+  justify-content: space-between;
+}
+.btn {
+  background-color: #f26c29;
+  border: none;
+  color: white;
+  height: 50px;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #da4d06ec;
+}
+
+.imgContainer {
+  overflow: hidden;
+  border-radius: 1rem;
+  flex: 1 1 280px;
+  max-width: 300px;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.heading {
+  font-size: 4rem;
+
+  font-weight: 700;
+  color: #f26c29ec;
+}
+
+.addToCartBtn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background: #f26c29ec;
+  color: white;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.addToCartBtn:hover {
+  background: #da4d06ec;
+  transform: scale(1.02);
+}
+
+.preD {
+  flex: 1 1 350px;
+  color: #0f346c;
+}
+
+.preD h1 {
+  margin: 1rem 0;
+}
+
+.preD hr {
+  margin: 1.5rem 0;
+}
+
+.hide {
+  display: none;
+}
+.cartControls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f7f7f7;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cartControls button {
+  background-color: #ff6b35;
+  color: white;
+  border: none;
+  font-size: 6rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cartControls button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.cartControls button:hover:not(:disabled) {
+  background-color: #e65a29;
+  transform: scale(1.05);
+}
+
+.cartControls span {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #333;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Smaller screens */
+@media (max-width: 1024px) {
+  .cartControls {
+    font-size: 1rem;
+  }
+  .cartControls button {
+    height: 4rem;
+    width: 4rem;
+    font-size: 3rem;
+  }
+  .cartControls span {
+    font-size: 3rem;
+  }
+  .container {
+    padding: 15% 1rem;
+  }
+  .addToCartBtn {
+    font-size: 1.5rem;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+  .categoryHeader {
+    margin-top: 5rem;
+    font-size: 1.5rem;
+  }
+  .imgContainer {
+    max-width: 200px;
+  }
+  .productDetails {
+    padding: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 768px) {
+  .cartControls {
+    font-size: 1rem;
+  }
+  .cartControls button {
+    height: 32px;
+    width: 32px;
+    font-size: 2rem;
+  }
+  .cartControls span {
+    font-size: 2rem;
+  }
+  .categoryHeader {
+    font-size: 1.2rem;
+  }
+  .imgContainer {
+    max-width: 100px;
+  }
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .addToCartBtn {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+  .span p {
+    font-size: small;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

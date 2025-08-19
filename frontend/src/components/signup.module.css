@@ -1,0 +1,110 @@
+/* Container */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* Form Box */
+.form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Heading */
+.formHeading {
+  font-family: agrandir-tight-bold, Verdana, Geneva, sans-serif;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Inputs */
+.form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form input:focus {
+  border-color: #1d54a8;
+  box-shadow: 0 0 5px rgba(95, 119, 255, 0.4);
+}
+
+/* Password Container */
+.inputContainer {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: rgb(124 178 233);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Button */
+.form button {
+  padding: 12px;
+  background: #f26c29;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #fc7e3f;
+}
+.loginLink {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
+}
+
+.loginLink a {
+  color: #0f346c; /* change to your brand color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.loginLink a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .form {
+    padding: 20px;
+  }
+
+  .formHeading {
+    font-size: 20px;
+  }
+
+  .form input,
+  .form button {
+    font-size: 14px;
+  }
+}
