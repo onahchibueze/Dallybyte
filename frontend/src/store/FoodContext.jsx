@@ -1,12 +1,11 @@
 import { createContext, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { set } from "mongoose";
 
 export const FoodInfo = createContext();
 
 export const FoodInfoProvider = ({ children }) => {
-  const [admin, setAdmin] = useState(null); // ✅ moved inside provider
+  const [admin, setAdmin] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
   const [search, setSearch] = useState(null);
   const [categories, setCategories] = useState(null);
@@ -16,14 +15,13 @@ export const FoodInfoProvider = ({ children }) => {
   const [cart, setCart] = useState(null);
   const [address, setAddress] = useState(null);
   const [totalAmount, setTotalAmount] = useState(0);
+
+  const API_URL = import.meta.env.VITE_API_URL; // ✅ Use environment variable
+
   const signUp = async (form) => {
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
-        form
-      );
+      const res = await axios.post(`${API_URL}/api/auth/register`, form);
       toast.success("Account created successfully!");
-
       return res.data;
     } catch (error) {
       const errMsg = error.response?.data?.message || "Something went wrong";
@@ -34,18 +32,9 @@ export const FoodInfoProvider = ({ children }) => {
 
   const logIn = async (form) => {
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        form
-      );
-
+      const res = await axios.post(`${API_URL}/api/auth/login`, form);
       toast.success(res.data.message);
-
-      // Save token for later API calls
       localStorage.setItem("token", res.data.token);
-
-      // Store user info
-
       return res.data;
     } catch (error) {
       const errMsg = error.response?.data?.message || "Something went wrong";
@@ -53,20 +42,16 @@ export const FoodInfoProvider = ({ children }) => {
       throw error;
     }
   };
+
   const addItem = async (formData) => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/products/add", // removed duplicate `/api`
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-
+      const res = await axios.post(`${API_URL}/api/products/add`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
       toast.success(res.data.message);
       return res.data;
     } catch (error) {
@@ -75,22 +60,15 @@ export const FoodInfoProvider = ({ children }) => {
       throw error;
     }
   };
+
   const addToCart = async () => {
     const token = localStorage.getItem("token");
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/cart/add", // removed duplicate `/api`
-        {
-          itemId,
-          quantity,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
+        `${API_URL}/api/cart/add`,
+        { itemId, quantity },
+        { headers: { Authorization: `Bearer ${token}` } }
       );
-
       toast.success(res.data.message);
       return res.data;
     } catch (error) {
@@ -99,24 +77,16 @@ export const FoodInfoProvider = ({ children }) => {
       throw error;
     }
   };
+
   const addOrder = async (total) => {
     const token = localStorage.getItem("token");
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/orders/add", // removed duplicate `/api`
-        {
-          address,
-          totalPrice: total,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
+        `${API_URL}/api/orders/add`,
+        { address, totalPrice: total },
+        { headers: { Authorization: `Bearer ${token}` } }
       );
-
       toast.success(res.data.message);
-      console.log(res.data.data);
       return res.data;
     } catch (error) {
       const errMsg = error.response?.data?.message || "Something went wrong";
@@ -124,16 +94,11 @@ export const FoodInfoProvider = ({ children }) => {
       throw error;
     }
   };
+
   const getItem = async () => {
-    const token = localStorage.getItem("token");
     try {
-      const res = await axios.get(
-        "http://localhost:5000/api/products/" // removed duplicate `/api`
-      );
-
-      toast.success(res.data.message);
+      const res = await axios.get(`${API_URL}/api/products/`);
       setFoods(res.data.data);
-      console.log(res.data.data);
       return res.data;
     } catch (error) {
       const errMsg = error.response?.data?.message || "Something went wrong";
@@ -141,15 +106,14 @@ export const FoodInfoProvider = ({ children }) => {
       throw error;
     }
   };
+
   const getCart = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:5000/api/cart/", {
+      const res = await axios.get(`${API_URL}/api/cart/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      toast.success(res.data.message);
       setCart(res.data);
-      console.log(res.data);
       return res.data;
     } catch (error) {
       const errMsg = error.response?.data?.message || "Something went wrong";
@@ -157,35 +121,29 @@ export const FoodInfoProvider = ({ children }) => {
       throw error;
     }
   };
+
   const getProfile = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/", {
+      const res = await axios.get(`${API_URL}/api/auth/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      toast.success(res.data.message);
       setUserInfo(res.data.data);
-      console.log(res.data);
       return res.data;
     } catch (error) {
       setUserInfo(null);
-      const errMsg = error.response?.data?.message || "Something went wrong";
-
       throw error;
     }
   };
+
   const logOut = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
     try {
-      const token = localStorage.getItem("token");
-      if (!token) return;
-
-      await fetch("http://localhost:5000/api/auth/logout", {
+      await fetch(`${API_URL}/api/auth/logout`, {
         method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        headers: { Authorization: `Bearer ${token}` },
       });
-
       localStorage.removeItem("token");
       setUserInfo(null);
     } catch (err) {
@@ -196,17 +154,10 @@ export const FoodInfoProvider = ({ children }) => {
   const deleteCart = async (id) => {
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.delete(
-        `http://localhost:5000/api/cart/delete/${id}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-
+      const res = await axios.delete(`${API_URL}/api/cart/delete/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       toast.success(res.data.message);
-
-      console.log(res.data);
-
       return res.data;
     } catch (error) {
       const errMsg = error.response?.data?.message || "Something went wrong";
@@ -251,4 +202,5 @@ export const FoodInfoProvider = ({ children }) => {
     </FoodInfo.Provider>
   );
 };
+
 export default FoodInfo;
