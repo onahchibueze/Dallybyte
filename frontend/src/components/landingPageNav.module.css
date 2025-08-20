@@ -17,7 +17,7 @@
 
 .navContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -163,5 +163,46 @@
     border-bottom: 1px solid#0f346c;
     padding: 0.5rem;
     width: 150px;
+  }
+}
+/* === EXTRA SMALL SCREENS (≤ 360px) === */
+@media (max-width: 360px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .header {
+    font-size: 1.2em; /* smaller heading */
+  }
+
+  .toggle {
+    font-size: 1.5rem; /* slightly smaller toggle icon */
+  }
+
+  .menu {
+    width: 220px; /* reduce sidebar width */
+    padding: 1.5rem 0.8rem;
+  }
+
+  .menu .list {
+    gap: 0.8rem;
+  }
+
+  .listItem {
+    width: 100%; /* full width items */
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .btnContainer {
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .btn,
+  .btnLogin {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-radius: 3px;
   }
 }
