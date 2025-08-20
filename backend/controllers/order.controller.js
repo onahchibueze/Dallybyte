@@ -1,9 +1,9 @@
 import Cart from "../models/Cart.model.js";
-import Order from "../models/order.model.js";
+import Order from "../models/Order.model.js";
 import User from "../models/User.model.js";
 
 // @desc    Create a new order
-// @route   POST /api/orders/add
+// @route   POST /api/orders/ad
 // @access  Private
 export const addOrder = async (req, res) => {
   const { totalPrice, address, status } = req.body;
