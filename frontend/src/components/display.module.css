@@ -18,7 +18,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 2fr));
   gap: 1.5rem;
 }
 
@@ -73,7 +73,7 @@
   color: white;
   height: 50px;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 50%;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -243,6 +243,61 @@
   }
   .span p {
     font-size: small;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    padding-top: 20%;
+  }
+  .cartControls {
+    font-size: 1rem;
+  }
+  .cartControls button {
+    height: 32px;
+    width: 32px;
+    font-size: 2rem;
+  }
+  .cartControls span {
+    font-size: 2rem;
+  }
+  .categoryHeader {
+    font-size: 1.2rem;
+  }
+  .imgContainer {
+    min-width: 70px;
+    max-width: 100px;
+  }
+  .preD h1 {
+    font-size: 1.3rem;
+  }
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .addToCartBtn {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+  .span h2 {
+    font-size: 1.2rem;
+  }
+  .span p {
+    font-size: small;
+    max-height: 70px;
+    overflow: scroll;
+  }
+  .btn {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  .pre {
+    gap: 1rem;
+  }
+  .cartControls {
+    margin: 0;
+  }
+  .flex {
+    gap: 0;
   }
 }
 

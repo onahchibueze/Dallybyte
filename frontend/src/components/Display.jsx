@@ -103,7 +103,7 @@ const Display = () => {
                   className={styles.btn}
                   onClick={() => setIsOpen(!isOpen)}
                 >
-                  close
+                  X{" "}
                 </button>
               </div>
               <div className={styles.preD}>

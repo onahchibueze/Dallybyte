@@ -60,6 +60,7 @@
   width: 28px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
 .inputContainer img {
   cursor: pointer;
   opacity: 0.3;
@@ -355,5 +356,15 @@
   }
   .subMenu {
     position: initial;
+  }
+}
+@media (max-width: 500px) {
+  .topNavContainer {
+    flex-wrap: nowrap;
+  }
+  .header {
+    margin: 0;
+  }
+  .menuWrapper {
   }
 }
