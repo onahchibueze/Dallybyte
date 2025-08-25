@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import styles from "../components/order.module.css";
-import FoodInfo from "../store/FoodContext";
+import styles from "../Order/order.module.css";
+import FoodInfo from "../../store/FoodContext";
 
 const Order = ({ total }) => {
   const { setAddress, address, totalAmount } = useContext(FoodInfo);

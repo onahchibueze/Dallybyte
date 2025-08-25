@@ -1,90 +1,93 @@
-/* Container */
+/* === Container === */
 .container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 20px;
+  padding: var(--spacing-md);
 }
 
-/* Form Box */
+/* === Form Box === */
 .form {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   width: 100%;
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: var(--spacing-md);
 }
 
-/* Heading */
+/* === Heading === */
 .formHeading {
   font-family: agrandir-tight-bold, Verdana, Geneva, sans-serif;
   text-align: center;
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: var(--font-size-2xl);
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
 }
 
-/* Inputs */
+/* === Inputs === */
 .form input {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   outline: none;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  font-size: var(--font-size-md);
+  transition: var(--transition-normal);
 }
 
 .form input:focus {
-  border-color: #1d54a8;
+  border-color: var(--primary-color);
   box-shadow: 0 0 5px rgba(95, 119, 255, 0.4);
 }
 
-/* Password Container */
+/* === Password Container === */
 .inputContainer {
   position: relative;
 }
 
 .togglePassword {
   position: absolute;
-  right: 12px;
+  right: var(--spacing-sm);
   top: 50%;
   transform: translateY(-50%);
-  font-size: 14px;
-  color: rgb(124 178 233);
+  font-size: var(--font-size-sm);
+  color: var(--secondary-color);
   cursor: pointer;
   user-select: none;
 }
 
-/* Button */
+/* === Button === */
 .form button {
-  padding: 12px;
-  background: #f26c29;
+  padding: var(--spacing-sm);
+  background: var(--accent-color);
   border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 16px;
+  border-radius: var(--border-radius);
+  color: var(--white);
+  font-size: var(--font-size-base);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: var(--transition-normal);
 }
 
 .form button:hover {
-  background-color: #fc7e3f;
+  background-color: var(
+    --primary-hover
+  ); /* consider making a --accent-hover token */
 }
+
+/* === Login Link === */
 .loginLink {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-sm);
   text-align: center;
-  color: #555;
+  color: var(--secondary-color);
 }
 
 .loginLink a {
-  color: #0f346c; /* change to your brand color */
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: bold;
 }
@@ -93,18 +96,18 @@
   text-decoration: underline;
 }
 
-/* Responsive */
+/* === Responsive === */
 @media (max-width: 500px) {
   .form {
-    padding: 20px;
+    padding: var(--spacing-md);
   }
 
   .formHeading {
-    font-size: 20px;
+    font-size: var(--font-size-xl);
   }
 
   .form input,
   .form button {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
   }
 }

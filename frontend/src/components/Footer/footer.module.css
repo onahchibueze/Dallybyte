@@ -1,5 +1,10 @@
 .footer {
-  background: linear-gradient(135deg, #0f346c, #000);
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--secondary-hover)
+  );
+
   color: #fff;
   padding: 3rem 2rem 1rem;
 }
@@ -19,22 +24,22 @@
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: var(--font-size-xl);
   font-weight: 800;
-  color: #f26c29;
-  margin-bottom: 1rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
 }
 
 .description {
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm);
   line-height: 1.6;
   color: #ccc;
 }
 
 .footerCol h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #f26c29;
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-color);
 }
 
 .footerCol ul {
@@ -49,11 +54,11 @@
 .footerCol ul li a {
   text-decoration: none;
   color: #ddd;
-  transition: color 0.3s ease;
+  transition: color var(--transition-normal);
 }
 
 .footerCol ul li a:hover {
-  color: #f26c29;
+  color: var(--primary-color);
 }
 
 /* Newsletter */
@@ -67,42 +72,42 @@
   flex: 1;
   padding: 0.7rem;
   border: none;
-  border-radius: 2rem;
+  border-radius: var(--border-radius);
   outline: none;
 }
 
 .newsletter button {
   padding: 0.7rem 1.2rem;
   border: none;
-  border-radius: 2rem;
-  background: #f26c29;
-  color: #fff;
+  border-radius: var(--border-radius);
+  background: var(--primary-color);
+  color: var(--white);
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition-normal);
 }
 
 .newsletter button:hover {
-  background: #e56a00;
+  background: var(--primary-hover);
 }
 
 /* Socials */
 .socials a {
   margin-right: 0.8rem;
-  color: #fff;
-  font-size: 1.2rem;
-  transition: 0.3s;
+  color: var(--white);
+  font-size: var(--font-size-lg);
+  transition: var(--transition-normal);
 }
 
 .socials a:hover {
-  color: #f26c29;
+  color: var(--primary-color);
 }
 
 /* Copy Section */
 .copy {
   text-align: center;
-  margin-top: 2rem;
-  font-size: 0.9rem;
+  margin-top: var(--spacing-lg);
+  font-size: var(--font-size-sm);
   color: #aaa;
   border-top: 1px solid #222;
   padding-top: 1rem;
@@ -123,7 +128,7 @@
     width: 100%;
   }
 }
-/* Mobile Responsive */
+
 @media (max-width: 480px) {
   .footer {
     padding: 2rem 1rem 1rem;
@@ -142,16 +147,16 @@
   }
 
   .logo {
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: var(--font-size-xs);
     line-height: 1.4;
   }
 
   .footerCol h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
   }
 
   .footerCol ul li {
@@ -174,12 +179,12 @@
   }
 
   .socials a {
-    font-size: 1.1rem;
+    font-size: var(--font-size-md);
     margin: 0 0.5rem;
   }
 
   .copy {
-    font-size: 0.85rem;
+    font-size: var(--font-size-xs);
     padding-top: 0.8rem;
   }
 }

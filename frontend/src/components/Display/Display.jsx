@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import FoodInfo from "../store/FoodContext";
-import MenuCard from "./MenuCard";
-import styles from "../components/display.module.css";
-import Loader from "./Loader";
+import FoodInfo from "../../store/FoodContext";
+import MenuCard from "../MenuCard/MenuCard";
+import styles from "../Display/display.module.css";
+import Loader from "../Loader/Loader";
 
 const Display = () => {
   const {
@@ -20,7 +20,7 @@ const Display = () => {
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     getItem();
-  }, [search]);
+  }, []);
   const handleAddToCart = async () => {
     setQuantity(1);
     const res = await addToCart();

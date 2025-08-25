@@ -1,10 +1,19 @@
 import React, { useContext, useEffect } from "react";
-import FoodInfo from "../store/FoodContext";
-import styles from "../components/cartPage.module.css";
 
-import Order from "../components/Order.jsx";
+import styles from "../components/cartPage.module.css";
+import FoodInfo from "../store/FoodContext";
+import Order from "../components/Order/Order";
+
 const CartPage = () => {
-  const { cart, getCart, deleteCart, addOrder } = useContext(FoodInfo);
+  const {
+    cart,
+    getCart,
+    deleteCart,
+    addOrder,
+    address,
+    setSearch,
+    SetCategory,
+  } = useContext(FoodInfo);
 
   useEffect(() => {
     getCart();
@@ -27,6 +36,8 @@ const CartPage = () => {
   const handleAdd = async (total) => {
     await addOrder(total);
   };
+  const deliveryFee = address ? 2000 : 0;
+  const subtotal = cart.totalAmount + deliveryFee;
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>Your Cart</h2>
@@ -59,7 +70,7 @@ const CartPage = () => {
           <Order total={cart.totalAmount} />
           <div>
             <h3>Delivery price:</h3>
-            <h3>₦2,000</h3>
+            <h3>₦{deliveryFee.toLocaleString()}</h3>
           </div>
           <div>
             <h3>Total price of items:</h3>
@@ -68,12 +79,16 @@ const CartPage = () => {
           </div>
           <div>
             <h3>Subtotal:</h3>
-            <h3>₦{(cart.totalAmount + 2000).toLocaleString()}</h3>
+            <h3>₦{subtotal.toLocaleString()}</h3>
           </div>
 
           <button
             className={styles.btn}
-            onClick={() => handleAdd(cart.totalAmount)}
+            onClick={() => {
+              handleAdd(cart.totalAmount);
+              setSearch(null);
+              SetCategory(null);
+            }}
           >
             Place an order
           </button>

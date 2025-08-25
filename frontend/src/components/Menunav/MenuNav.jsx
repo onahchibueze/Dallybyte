@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import user from "../images/user-solid-full (2).svg";
-import cart from "../images/cart-shopping-solid-full.svg";
-import searchIcon from "../images/magnifying-glass-solid-full.svg";
-import order from "../images/bag-shopping-solid-full.svg";
-import menuIcon from "../images/toggle.svg";
-import styles from "../components/menu_nav.module.css";
-import FoodInfo from "../store/FoodContext";
+import user from "../../images/user-solid-full (2).svg";
+import cart from "../../images/cart-shopping-solid-full.svg";
+import searchIcon from "../../images/magnifying-glass-solid-full.svg";
+import order from "../../images/bag-shopping-solid-full.svg";
+import menuIcon from "../../images/toggle.svg";
+import styles from "../Menunav/menu_nav.module.css";
+import FoodInfo from "../../store/FoodContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export const MenuNav = () => {
@@ -162,7 +162,7 @@ export const MenuNav = () => {
             {/* User details */}
             <div className={styles.details}>
               <h1>{userInfo.name}</h1>
-              <h3>{userInfo.phone}</h3>
+
               <h3>{userInfo.email}</h3>
             </div>
 
@@ -170,6 +170,12 @@ export const MenuNav = () => {
 
             <button className={styles.logoutBtn} onClick={handleLogOut}>
               Logout
+            </button>
+            <button
+              className={styles.logoutBtn}
+              onClick={() => setProfileOpen(!profileOpen)}
+            >
+              ✖️
             </button>
           </div>
         )}

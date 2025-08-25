@@ -6,7 +6,11 @@
   text-align: center;
   min-height: 80vh;
   padding: 2rem;
-  background: linear-gradient(135deg, #0f346c, rgb(124 178 233));
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--secondary-hover)
+  );
   color: white;
   border: 1rem solid white;
 }
@@ -16,14 +20,14 @@
 }
 
 .heroHeading {
-  font-size: 2.8rem;
+  font-size: var(--font-size-2xl);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
 .highlight {
-  color: #f26c29; /* your orange brand color */
+  color: var(--primary-color); /* your orange brand color */
 }
 
 .heroSub {
@@ -35,7 +39,7 @@
 
 .brand {
   font-weight: 700;
-  color: #f26c29;
+  color: var(--primary-color);
 }
 
 .ctaBtn {
@@ -43,16 +47,16 @@
   font-size: 1rem;
   font-weight: 600;
   border: none;
-  border-radius: 2rem;
-  background: #f26c29;
+  border-radius: var(--border-radius);
+  background: var(--primary-color);
   color: white;
   cursor: pointer;
-  margin: 1rem;
+  margin: 1rem 0;
   transition: all 0.3s ease;
 }
 
 .ctaBtn:hover {
-  background: #e56a00;
+  background: var(--primary-hover);
   transform: scale(1.05);
 }
 
@@ -71,7 +75,7 @@
   max-width: 1100px;
   margin: 0 auto;
   flex-wrap: wrap;
-  border: 1px solid #0f346c;
+  border: 2px solid var(--secondary-color);
   padding: 2rem;
   border-radius: 2rem;
 }
@@ -79,7 +83,7 @@
 .showcaseImg {
   width: 100%;
   max-width: 500px;
-  border-radius: 1.5rem;
+  border-radius: var(--border-radius);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   object-fit: cover;
 }
@@ -89,14 +93,14 @@
 }
 
 .showcaseHeading {
-  font-size: 2rem;
+  font-size: var(--font-size-2xl);
   font-weight: 700;
   margin-bottom: 1rem;
   color: #111;
 }
 
 .showcaseSub {
-  font-size: 1.1rem;
+  font-size: var(--font-size-md);
   line-height: 1.6;
   color: #444;
 }
@@ -104,10 +108,10 @@
 /* Responsive */
 @media (max-width: 768px) {
   .heroHeading {
-    font-size: 2rem;
+    font-size: var(--font-size-2xl);
   }
   .heroSub {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
   .showcaseWrapper {
     flex-direction: column;
@@ -120,10 +124,10 @@
 
 @media (max-width: 400px) {
   .heroHeading {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
   .heroSub {
-    font-size: 0.9rem;
+    font-size: var(--font-size-xl);
   }
   .ctaBtn {
     width: 100%;

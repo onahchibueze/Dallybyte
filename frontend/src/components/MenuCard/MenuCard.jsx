@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import styles from "../components/menucard.module.css";
+import styles from "../MenuCard/menucard.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import FoodInfo from "../store/FoodContext";
+import FoodInfo from "../../store/FoodContext";
 const MenuCard = ({ product, setIsOpen }) => {
   const { setItemId, itemId } = useContext(FoodInfo);
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import AdminNav from "../components/AdminNav";
-import TopNav from "../components/TopNav";
+import AdminNav from "../components/AdminNav/AdminNav";
+import TopNav from "../components/AdminNav/TopNav";
 import styles from "../components/admin.module.css";
 import AddPage from "./AddPage";
 import { Routes, Route } from "react-router-dom";

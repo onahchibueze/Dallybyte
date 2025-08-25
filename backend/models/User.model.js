@@ -15,16 +15,24 @@ export const UserSchema = new mongoose.Schema({
 
   password: {
     type: String,
-    required: true,
+    required: function () {
+      return !this.googleId;
+    },
   },
 
   phone: {
     type: String,
-    unique: true,
-    required: true,
+    unique: false,
+    required: function () {
+      return !this.googleId;
+    },
     match: [/^\d{10,15}$/, "Phone number must be between 10 and 15 digits"],
   },
 
+  googleId: {
+    type: String,
+    required: false,
+  },
   isAdmin: {
     type: Boolean,
     default: false,

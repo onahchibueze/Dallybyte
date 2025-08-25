@@ -14,7 +14,7 @@ export const FoodInfoProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState(null);
   const [address, setAddress] = useState(null);
-  const [totalAmount, setTotalAmount] = useState(0);
+  const [cartQuantity, setCartQuantity] = useState(0);
 
   const API_URL = import.meta.env.VITE_API_URL; // ✅ Use environment variable
 
@@ -35,6 +35,7 @@ export const FoodInfoProvider = ({ children }) => {
       const res = await axios.post(`${API_URL}/api/auth/login`, form);
       toast.success(res.data.message);
       localStorage.setItem("token", res.data.token);
+
       return res.data;
     } catch (error) {
       const errMsg = error.response?.data?.message || "Something went wrong";
@@ -171,7 +172,8 @@ export const FoodInfoProvider = ({ children }) => {
       value={{
         addOrder,
         setAddress,
-        setTotalAmount,
+        cartQuantity,
+        setCartQuantity,
         signUp,
         address,
         logIn,

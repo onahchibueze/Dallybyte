@@ -2,25 +2,25 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: var(--spacing-md);
   padding-top: 17%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  color: var(--black);
 }
 
 /* Heading */
 .heading {
   text-align: center;
   font-weight: bold;
-  font-size: 2em;
+  font-size: var(--font-size-2xl);
   font-family: Polysans, sans-serif;
-  color: #0f346c;
+  color: var(--secondary-color);
 }
 
 /* Cart Content */
 .cartContent {
   display: flex;
-  gap: 2rem;
+  gap: var(--spacing-xl);
   flex-wrap: wrap;
 }
 
@@ -29,7 +29,7 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-md);
 }
 
 /* Each Cart Item */
@@ -37,11 +37,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition-normal);
 }
 
 .contentSub:hover {
@@ -51,14 +51,14 @@
 /* Image and Text Side */
 .flexSub {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-md);
   align-items: center;
 }
 
 .imgContainer {
   width: 80px;
   height: 80px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -70,16 +70,17 @@
 }
 
 .textContainer h3 {
-  color: #0f346c;
-  font-size: 1.1rem;
+  color: var(--secondary-color);
+  font-size: var(--font-size-md);
   margin: 0;
 }
 
 .textContainer p {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: var(--font-size-sm);
+  color: var(--black);
   margin-top: 0.3rem;
 }
+
 .con p:hover {
   text-decoration: underline;
 }
@@ -90,60 +91,64 @@
 }
 
 .contentSub h3 {
-  font-size: 1.2rem;
-  color: #222;
+  font-size: var(--font-size-lg);
+  color: var(--black);
 }
 
 .contentSub p {
-  font-size: 0.9rem;
-  color: #0f346c;
+  font-size: var(--font-size-sm);
+  color: var(--secondary-color);
   cursor: pointer;
   margin-top: 0.3rem;
 }
+
 .p {
   text-align: center;
   font-weight: bold;
-  font-size: 2em;
+  font-size: var(--font-size-2xl);
   font-family: Polysans, sans-serif;
-  color: #0f346c;
-
+  color: var(--secondary-color);
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
+
 /* Subtotal Section */
 .cartContent > div:last-child {
   flex: 1;
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  box-shadow: var(--box-shadow);
   height: fit-content;
 }
+
 .btn {
-  background: #ff6600;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--white);
   border: none;
-  padding: 0.9rem;
-  font-size: 1rem;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-md);
   font-weight: bold;
-  border-radius: 0.8rem;
+  border-radius: var(--border-radius);
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: var(--transition-normal);
   width: 100%;
 }
 
 .btn:hover {
-  background: #e65c00; /* darker orange */
+  background: var(--primary-hover);
 }
+
 .cartContent > div:last-child h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
 }
+
 .cartContent > div:last-child div {
-  border-bottom: 1px solid #333;
-  margin: 2rem 1rem;
+  border-bottom: 1px solid var(--black);
+  margin: var(--spacing-xl) var(--spacing-md);
   justify-content: space-between;
   display: flex;
 }
@@ -152,7 +157,7 @@
 @media (max-width: 1024px) {
   .container {
     padding-top: 12rem;
-    margin: 0 2rem;
+    margin: 0 var(--spacing-lg);
   }
 
   .cartContent {
@@ -165,27 +170,30 @@
     padding-top: 7rem;
   }
   .heading {
-    font-size: 1.5rem;
-    padding-top: 2rem;
+    font-size: var(--font-size-xl);
+    padding-top: var(--spacing-lg);
   }
   .con h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
-
   .textContainer h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
 }
+
 @media (max-width: 390px) {
   .heading {
     padding-top: 22%;
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
   .con h3 {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
   }
-
   .textContainer h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
+  }
+  .cartContent > div:last-child h3 {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-sm);
   }
 }

@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
-import styles from "./landingPageNav.module.css";
-import toggleIcon from "../images/toggle.svg";
+import React, { useContext, useEffect, useState } from "react";
+import styles from "../LandingPageNav/landingPageNav.module.css";
+import toggleIcon from "../../images/toggle.svg";
 import { Link } from "react-router-dom";
+import FoodInfo from "../../store/FoodContext";
 
 const LandingPageNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { setSearch, setCategories } = useContext(FoodInfo);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,11 +33,18 @@ const LandingPageNav = () => {
                 Home
               </a>
             </li>
-            <li className={styles.listItem}>
+            <li
+              className={styles.listItem}
+              onClick={() => {
+                setSearch(null);
+                setCategories(null);
+              }}
+            >
               <a href="/menupage" className={styles.a}>
-                Our menu
+                Menu
               </a>
             </li>
+            {/*
             <li className={styles.listItem}>
               <a href="" className={styles.a}>
                 Services
@@ -51,6 +60,8 @@ const LandingPageNav = () => {
                 Contact
               </a>
             </li>
+
+            */}
           </ul>
         </div>
 
@@ -83,9 +94,10 @@ const LandingPageNav = () => {
                 className={styles.a}
                 onClick={() => setIsOpen(false)}
               >
-                Our menu
+                Menu
               </a>
             </li>
+            {/*
             <li className={styles.listItem}>
               <a href="#" className={styles.a} onClick={() => setIsOpen(false)}>
                 Services
@@ -101,7 +113,7 @@ const LandingPageNav = () => {
                 Contact
               </a>
             </li>
-
+*/}
             <div className={styles.btnContainer}>
               <Link to="/signup">
                 <button className={styles.btn} onClick={() => setIsOpen(false)}>

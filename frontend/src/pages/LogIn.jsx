@@ -4,13 +4,15 @@ import styles from "../components/signup.module.css";
 import { FoodInfo } from "../store/FoodContext.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import GoogleAuthButton from "../components/GoogleAuthButton.jsx";
 
 const LogIn = () => {
   const navigate = useNavigate();
-  const { logIn, setAdmin, admin, userInfo, setUserInfo } =
-    useContext(FoodInfo);
+  const { logIn, setAdmin, setUserInfo } = useContext(FoodInfo);
+
   const [form, setForm] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
+  const [emailError, setEmailError] = useState(""); // <-- Added state
 
   useEffect(() => {
     AOS.init({
@@ -23,14 +25,14 @@ const LogIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await logIn(form); // res comes directly from axios
+      const res = await logIn(form);
       setForm({ email: "", password: "" });
-
-      // Redirect based on role
+      console.log(res.data);
       if (res.data.isAdmin) {
-        navigate("/adminpage");
         setAdmin(res.data);
+        navigate("/adminpage");
       } else {
+        setUserInfo(res.data); // <-- Store user info
         navigate("/menupage");
       }
     } catch (error) {
@@ -38,20 +40,29 @@ const LogIn = () => {
     }
   };
 
+  const handleEmailBlur = () => {
+    if (!form.email.includes("@")) {
+      setEmailError("Please enter a valid email!");
+    } else {
+      setEmailError("");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit} className={styles.form} data-aos="fade-up">
         <h2 className={styles.formHeading}>Login</h2>
-
         <input
           type="email"
           name="email"
           placeholder="Email"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
+          onBlur={handleEmailBlur}
           required
         />
-
+        {emailError && <p className={styles.error}>{emailError}</p>}{" "}
+        {/* Show error */}
         <div className={styles.inputContainer}>
           <input
             type={showPassword ? "text" : "password"}
@@ -68,9 +79,9 @@ const LogIn = () => {
             {showPassword ? "Hide" : "Show"}
           </span>
         </div>
-
         <button type="submit">Login</button>
-
+        <p className={styles.formHeading}>or</p>
+        <GoogleAuthButton />
         <p className={styles.loginLink}>
           Don’t have an account? <Link to="/signup">Sign up</Link>
         </p>

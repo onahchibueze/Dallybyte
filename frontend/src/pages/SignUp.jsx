@@ -4,6 +4,7 @@ import styles from "../components/signup.module.css";
 import FoodInfo from "../store/FoodContext.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import GoogleAuthButton from "../components/GoogleAuthButton.jsx";
 
 const SignUp = () => {
   const { admin } = useContext(FoodInfo);
@@ -88,7 +89,8 @@ const SignUp = () => {
         </div>
 
         <button type="submit">Create an account</button>
-
+        <p className={styles.formHeading}>or</p>
+        <GoogleAuthButton />
         {/* Already have an account */}
         <p className={styles.loginLink}>
           Already have an account? <Link to="/login">Login</Link>

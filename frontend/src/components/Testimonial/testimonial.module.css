@@ -11,22 +11,20 @@
   flex-direction: column;
   align-items: center; /* center content horizontally */
   text-align: center;
+  color: var(--secondary-color);
 }
 
 .testimonialHeading {
   width: 500px;
   max-width: 100%; /* prevent overflow on small screens */
-  font-family: agrandir-tight-bold, Verdana, Geneva, sans-serif;
+
   font-weight: 500;
-  color: #0f346c;
 }
 
 .testimonialsub,
 .textSub {
-  font-family: roboto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: var(--font-size-md);
   font-weight: 400;
-  color: rgb(124, 178, 233);
 }
 
 .mainContent {
@@ -38,7 +36,7 @@
 }
 
 .imgContainer {
-  border-radius: 30px;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
 }
 
@@ -54,10 +52,8 @@
 }
 
 .textHeading {
-  font-family: agrandir-tight-bold, Verdana, Geneva, sans-serif;
   font-weight: 500;
-  font-size: 32px; /* fixed invalid 'size' */
-  color: #0f346c;
+  font-size: var(--font-size-2xl); /* fixed invalid 'size' */
 }
 .offers {
   margin: 2rem;
@@ -69,8 +65,8 @@
   color: white;
   width: 400px;
   padding: 1rem;
-  border-radius: 1rem;
-  font-size: 1rem;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-md);
   font-weight: 600;
   cursor: pointer;
   margin: 2rem;
@@ -83,7 +79,7 @@
   justify-content: center;
 }
 .btn:hover {
-  background-color: #0f346c;
+  background-color: var(--primary-hover);
 }
 /* ===================== */
 /* MEDIA QUERIES */
@@ -101,35 +97,38 @@
   }
 
   .testimonialHeading {
-    font-size: 28px;
+    font-size: var(--font-size-2xl);
   }
 }
 
 /* Tablets & large phones */
 @media (max-width: 768px) {
   .testimonialHeading {
-    font-size: 24px;
+    font-size: var(--font-size-xl);
     width: 100%;
   }
 
   .testimonialsub,
   .textSub {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
   }
 
   .textHeading {
-    font-size: 24px;
+    font-size: var(--font-size-xl);
+  }
+  .btn {
+    width: 100%;
   }
 }
 
 /* Small phones (like 400px width) */
 @media (max-width: 400px) {
   .testimonialHeading {
-    font-size: 20px;
+    font-size: var(--font-size-lg);
   }
 
   .textHeading {
-    font-size: 20px;
+    font-size: var(--font-size-lg);
   }
 
   .mainContainer {

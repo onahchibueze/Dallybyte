@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import pizza from "../images/pizza.webp";
-import burger from "../images/burger.webp";
-import doughnut from "../images/doughnut.webp";
-import drink from "../images/drink.webp";
-import pastries from "../images/pastries.webp";
-import styles from "../components/testimonial.module.css";
+import pizza from "../../images/pizza.webp";
+import burger from "../../images/burger.webp";
+import doughnut from "../../images/doughnut.webp";
+import drink from "../../images/drink.webp";
+import pastries from "../../images/pastries.webp";
+import styles from "../Testimonial/testimonial.module.css";
 import { Link } from "react-router-dom";
 const Offers = () => {
   return (
@@ -24,8 +24,8 @@ const Offers = () => {
         <div
           className="slider"
           style={{
-            "--width": "clamp(200px, 80vw, 300px)", // min 200px, max 400px, scale with screen
-            "--height": "clamp(400px, 60vw, 500px)", // responsive height
+            "--width": "clamp(100px, 80vw, 100px)", // min 200px, max 400px, scale with screen
+            "--height": "clamp(200px, 60vw, 300px)", // responsive height
             "--quantity": 4,
           }}
         >
@@ -112,12 +112,11 @@ const StyledWrapper = styled.div`
     align-items: center;
     width: 100%;
     justify-content: center;
-    margin: 5rem;
+
     height: 100%;
     padding: 3rem;
 
-    border: 1px solid #ccc;
-    border-radius: 2rem;
+    border-radius: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     color: white;
     text-align: center;
@@ -125,9 +124,9 @@ const StyledWrapper = styled.div`
 
   .card p {
     font-family: agrandir-tight-bold, Verdana, Geneva, sans-serif;
-    font-size: 3rem;
+    font-size: 28px;
     color: white;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .slider {

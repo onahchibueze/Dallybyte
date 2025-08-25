@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import person from "../images/person.webp";
-import cafe from "../images/cafe.webp";
-import home from "../images/home.webp";
+import person from "../../images/person.webp";
+import cafe from "../../images/cafe.webp";
+import home from "../../images/home.webp";
 import styles from "./testimonial.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -23,7 +23,7 @@ const Testimonial = () => {
           <span> delicious foods are guaranteed</span>
         </h1>
         <p className={styles.testimonialsub}>
-          From quick-prep recipes to ready-made meals, DALLYBYTE gives you more
+          From quick-prep recipes to ready-made meals, DallyByte gives you more
         </p>
         <p className={styles.testimonialsub}>
           time, less stress, and better eating—night after night.
@@ -33,7 +33,7 @@ const Testimonial = () => {
       <div className={styles.mainContainer}>
         <div className={styles.mainContent} data-aos="fade-up">
           <div className={styles.imgContainer}>
-            <img src={home} alt="" />
+            <img src={home} alt="home" loading="lazy" />
           </div>
           <div
             className={styles.mainText}
@@ -68,13 +68,13 @@ const Testimonial = () => {
             </p>
           </div>
           <div className={styles.imgContainer}>
-            <img src={cafe} alt="" />
+            <img src={cafe} alt="cafe" loading="lazy" />
           </div>
         </div>
 
         <div className={styles.mainContent} data-aos="fade-up">
           <div className={styles.imgContainer}>
-            <img src={person} alt="" />
+            <img src={person} alt="person" loading="lazy" />
           </div>
           <div
             className={styles.mainText}

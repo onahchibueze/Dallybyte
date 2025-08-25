@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../components/admin_nav.module.css";
+import styles from "../AdminNav/admin_nav.module.css";
 const TopNav = () => {
   return (
     <div className={styles.topContainer}>

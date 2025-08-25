@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "../components/admin_nav.module.css";
-import toggleIcon from "../images/toggle.svg";
+import styles from "../AdminNav/admin_nav.module.css";
+import toggleIcon from "../../images/toggle.svg";
 import { Link } from "react-router-dom";
 
 const AdminNav = () => {

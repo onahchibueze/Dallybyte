@@ -1,48 +1,50 @@
+/* form.css */
+
 /* Container */
 .container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 20px;
+  padding: var(--spacing-md);
 }
 
 /* Form Box */
 .form {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: var(--white);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-lg);
   width: 100%;
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: var(--spacing-md);
 }
 
 /* Heading */
 .formHeading {
-  font-family: agrandir-tight-bold, Verdana, Geneva, sans-serif;
+  font-family: agrandir-tight-bold, var(--font-family);
   text-align: center;
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: var(--font-size-xl);
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
 }
 
 /* Inputs */
 .form input {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: var(--border-width) solid var(--light-gray);
+  border-radius: var(--border-radius);
   outline: none;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  font-size: var(--font-size-md);
+  transition: border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
 }
 
 .form input:focus {
-  border-color: #1d54a8;
-  box-shadow: 0 0 5px rgba(95, 119, 255, 0.4);
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 5px rgba(29, 84, 168, 0.4);
 }
 
 /* Password Container */
@@ -52,39 +54,41 @@
 
 .togglePassword {
   position: absolute;
-  right: 12px;
+  right: var(--spacing-sm);
   top: 50%;
   transform: translateY(-50%);
-  font-size: 14px;
-  color: rgb(124 178 233);
+  font-size: var(--font-size-sm);
+  color: var(--primary-color);
   cursor: pointer;
   user-select: none;
 }
 
 /* Button */
 .form button {
-  padding: 12px;
-  background: #f26c29;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--primary-color);
   border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 16px;
+  border-radius: var(--border-radius);
+  color: var(--white);
+  font-size: var(--font-size-md);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-normal);
 }
 
 .form button:hover {
-  background-color: #fc7e3f;
+  background-color: var(--primary-hover);
 }
+
+/* Login Link */
 .loginLink {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-sm);
   text-align: center;
-  color: #555;
+  color: var(--gray);
 }
 
 .loginLink a {
-  color: #0f346c; /* change to your brand color */
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: bold;
 }
@@ -96,15 +100,15 @@
 /* Responsive */
 @media (max-width: 500px) {
   .form {
-    padding: 20px;
+    padding: var(--spacing-lg);
   }
 
   .formHeading {
-    font-size: 20px;
+    font-size: var(--font-size-lg);
   }
 
   .form input,
   .form button {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
   }
 }
