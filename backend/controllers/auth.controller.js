@@ -128,7 +128,7 @@ export const googleAuth = async (req, res) => {
     const { email, name, sub } = payload;
     let user = await User.findOne({ email });
     if (!user) {
-      user = newUser({ name, email, googleId: sub });
+      user = new User({ name, email, googleId: sub });
       await user.save();
     }
     const authtoken = jwt.sign(
